@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.single-input-speller {
+  font-family: Arial, sans-serif;
+  width: 600px;
+  max-width: 100%;
+  margin: 20px auto;
+  text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.typed-text {
+  font-size: 28px;
+  margin-bottom: 20px;
+  min-height: 50px;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  color: var(--text-color);
+}
+
+.recommendations {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.recommendations.focused {
+  outline: 2px solid #0052cc;
+  outline-offset: 4px; 
+  border-radius: 5px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.03) 10px,
+    rgba(0, 0, 0, 0.03) 20px
+  );
+  outline: 2px solid var(--secondary);
+}
+
+.suggestion {
+  background-color: #f8f9fa;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 20px;
+  transition: transform 0.2s ease;
+  background-color: var(--key-background);
+}
+
+.suggestion.selected {
+  transform: scale(1.05);
+  background-color: var(--secondary);
+  color: var(--selected-text-color);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.05) 10px,
+    rgba(0, 0, 0, 0.05) 20px
+  );
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.keyboard.focused {
+  outline-offset: 4px;
+  border-radius: 5px;
+  outline: 2px solid var(--primary);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.03) 10px,
+    rgba(0, 0, 0, 0.03) 20px
+  );
+}
+
+.keyboard-row {
+  display: flex;
+  margin-bottom: 5px;
+  position: relative;
+  transition: transform 0.2s ease; 
+}
+
+.keyboard-row.selected {
+  outline: 2px solid var(--text-color); 
+  outline-offset: 2px; 
+  border-radius: 10px;
+  transform: scale(1.05); 
+}
+
+.keyboard-row.selected::before {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.keyboard-key {
+  margin: 3px;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--text-color);
+  background-color: var(--key-background);
+}
+
+.keyboard-key.selected {
+  background-color: var(--primary);
+  color: var(--selected-text-color);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.05) 10px,
+    rgba(0, 0, 0, 0.05) 20px
+  );
+}
+
+.keyboard-key:focus {
+  outline: none;
+}
+
+.select-button {
+  margin-top: 20px;
+}
+
+.select-button button {
+  color: var(--text-color);
+  border: none;
+  padding: 15px 30px;
+  font-size: 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--highlight-color);
+}
+
+.select-button button:hover {
+  background-color: #e0a800;
+}
+
+.select-button button:focus {
+  outline: none;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.keyboard.uppercase .keyboard-key {
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .single-input-speller {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0px;
+  }
+
+  .typed-text {
+    display: none;
+  }
+
+  .suggestion {
+    font-size: 16px;
+    padding: 1px 2px;
+    max-height: 30px;
+  }
+
+  .keyboard{
+    width: 560px;
+    margin: 0px auto;
+  }
+
+  .keyboard-key {
+    min-width: 30px;
+    max-width:60px;
+    height: 30px;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .recommendations {
+    height: 75px;
+    align-items: center;
+  }
+
+  .keyboard-row.selected{
+    transform: scale(1.03A);
+  }
+}
+
+@media (max-width: 800px) and (min-width:601px){
+  .single-input-speller {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0px;
+  }
+
+  .typed-text {
+    font-size:18px; 
+  overflow:hidden;
+  text-overflow: ellipsis;
+  max-height: 40px;
+  max-width: 720px;
+  }
+
+  .suggestion {
+    font-size: 20px;
+    padding: 2px 5px;
+    max-height: 30px;
+  }
+
+  .keyboard{
+    width: 720px;
+    margin: 0px auto;
+  }
+
+  .keyboard-key {
+    min-width: 50px;
+    max-width: 80px;
+    height: 47px;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .recommendations {
+    height: 75px;
+    align-items: center;
+  }
+}
