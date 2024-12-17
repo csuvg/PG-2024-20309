@@ -1,0 +1,51 @@
+.main-menu {
+  font-family: Arial, sans-serif;
+  width: 80vw;
+  max-width: 100%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.main-menu .options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-menu .option {
+  background-color: var(--key-background);
+  margin: 10px 0;
+  padding: 20px 30px;
+  border-radius: 5px;
+  width: 80%;
+  font-size: 24px;
+  color: var(--text-color);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.main-menu .option.selected {
+  background-color: var(--primary);
+  color: var(--selected-text-color);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.05) 10px,
+    rgba(0, 0, 0, 0.05) 20px
+  ); 
+}
+
+@media (max-width: 600px) {
+
+  .main-menu{
+    max-width: 100%;
+    margin-top:17px;
+  }
+
+  .main-menu .option {
+    font-size: 20px;
+    padding: 15px 10px;
+  }
+}

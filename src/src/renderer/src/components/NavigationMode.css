@@ -1,0 +1,52 @@
+.navigation-mode {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.navigation-mode .keyboard-key {
+  background-color: var(--key-background);
+  margin: 3px;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 140px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color:var(--text-color);
+  text-align: center;
+}
+
+.keyboard-key.selected {
+  background-color: var(--primary);
+  color: var(--selected-text-color);
+}
+
+@media (max-width: 600px) {
+  .navigation-mode {
+    max-width: 100%;
+  }
+
+  .navigation-mode .keyboard-key {
+    max-width: 130px;
+    height: 70px;
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 800px) and (min-width:601px){
+  .navigation-mode {
+    width: 100%;
+  }
+
+  .navigation-mode .keyboard-key {
+    max-width: 300px;
+    height: 70px;
+    font-size: 20px;
+  }
+}
