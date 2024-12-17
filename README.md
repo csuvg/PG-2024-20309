@@ -64,5 +64,5 @@ Una demostración visual de la aplicación está disponible en la carpeta `/demo
 
 El informe final del proyecto de graduación está disponible en formato PDF dentro de la carpeta `/docs/`:
 
-- [Informe Final](./docs/informe_Final.pdf)
+- [Informe Final](./docs/informe_final.pdf)
 
